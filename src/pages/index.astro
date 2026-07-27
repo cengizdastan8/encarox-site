@@ -1,0 +1,810 @@
+---
+import Layout from '~/layouts/Layout.astro';
+
+const services = [
+  {
+    no: '01',
+    title: 'Web siteleri',
+    text: 'Hızlı, erişilebilir ve arama motorlarının anlayabildiği kurumsal siteler ile satış odaklı landing page’ler.',
+  },
+  {
+    no: '02',
+    title: 'Mobil uygulamalar',
+    text: 'Android ve iOS için gerçek cihaz akışlarına, izinlere ve mağaza gereksinimlerine göre tasarlanan ürünler.',
+  },
+  {
+    no: '03',
+    title: 'İş yazılımları',
+    text: 'Tekrarlanan operasyonları azaltan paneller, CRM akışları, entegrasyonlar ve yapay zekâ destekli otomasyonlar.',
+  },
+  {
+    no: '04',
+    title: 'Büyüme sistemleri',
+    text: 'Sosyal medya, reklam kreatifi, ölçümleme ve dönüşüm optimizasyonunu ürünün kendisiyle birlikte ele alan sistem.',
+  },
+];
+
+const process = [
+  ['01', 'Netleştir', 'Hedefi, kullanıcıyı ve başarı ölçüsünü tek sayfalık bir ürün özünde toplarız.'],
+  ['02', 'Göster', 'Uzun sunumlar yerine, erken aşamada tıklanabilir ve gerçekçi bir ürün kesiti çıkarırız.'],
+  ['03', 'Üret', 'Onaylanan akışı performans, SEO, erişilebilirlik ve güvenlik kontrolleriyle geliştiririz.'],
+  ['04', 'Büyüt', 'Yayından sonra veriye bakar, darboğazları çözer ve işe yarayan kanalları güçlendiririz.'],
+];
+
+const metadata = {
+  title: 'Encarox — Web, Mobil Uygulama ve Dijital Büyüme Ajansı',
+  description:
+    'İşletmeler için web sitesi, mobil uygulama, özel yazılım, sosyal medya ve reklam sistemleri kuran ürün odaklı yazılım ajansı.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <main>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Encarox ana sayfa"
+        ><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M5 8h34v7H5zm0 11h23v7H5zm0 11h34v7H5z"></path></svg><span
+          >encarox</span
+        ></a
+      >
+      <nav aria-label="Ana menü">
+        <a href="#hizmetler">Hizmetler</a><a href="#urunler">Ürünler</a><a href="#surec">Süreç</a>
+      </nav>
+      <a class="header-cta" href="#iletisim">Proje konuşalım <span>↗</span></a>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Ürün odaklı yazılım ajansı · Türkiye</p>
+        <h1>Fikri ekranda<br /><em>çalışan bir şeye</em><br />dönüştürüyoruz.</h1>
+        <p class="hero-lead">
+          Web, mobil, otomasyon ve büyüme. Beş ayrı tedarikçi yerine ürününüzü baştan sona sahiplenen tek bir teknik
+          ekip.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#iletisim">Bir fikir anlat <span>↗</span></a><a
+            class="button button-ghost"
+            href="#hizmetler">Neler yapıyoruz?</a
+          >
+        </div>
+      </div>
+      <aside class="signal-board" aria-label="Encarox hizmet özeti">
+        <div class="signal-top"><span>CANLI SİSTEM</span><span class="live-dot">● ONLINE</span></div>
+        <div class="signal-main"><p>TEK EKİP</p><strong>04</strong><span>WEB / MOBİL / YAZILIM / BÜYÜME</span></div>
+        <div class="signal-grid">
+          <div><span>TESLİMAT</span><b>HAFTALAR</b></div><div><span>İLETİŞİM</span><b>DOĞRUDAN</b></div><div>
+            <span>ODAK</span><b>SONUÇ</b>
+          </div><div><span>DURUM</span><b>ÜRETİMDE</b></div>
+        </div>
+        <div class="ticker">
+          <span>STRATEJİ</span><span>•</span><span>TASARIM</span><span>•</span><span>KOD</span><span>•</span><span
+            >YAYIN</span
+          >
+        </div>
+      </aside>
+    </section>
+
+    <section class="proof-strip" aria-label="Çalışma ilkeleri">
+      <span>01 / SİZE UYARLANMIŞ SİSTEM</span><span>02 / ÖLÇÜLEBİLİR TESLİMAT</span><span>03 / AÇIK TEKNİK ALTYAPI</span
+      >
+    </section>
+
+    <section class="section services" id="hizmetler">
+      <div class="section-kicker">/ YETENEKLER</div>
+      <div class="section-heading">
+        <h2>İşletmenin dijital<br />motor odası.</h2><p>
+          İhtiyacınız “bir site” değilse, biz doğru yerdeyiz. Marka, deneyim, yazılım ve büyümeyi birbirinden koparmadan
+          kurarız.
+        </p>
+      </div>
+      <div class="service-list">
+        {
+          services.map((service) => (
+            <article class="service-row">
+              <>
+                <span>{service.no}</span>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+                <b aria-hidden="true">↗</b>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="product-section" id="urunler">
+      <div class="product-intro">
+        <div class="section-kicker light">/ KENDİ ÜRÜNLERİMİZ</div><h2>
+          Sadece müşteri işi yapmıyoruz.<br /><em>Ürün de çıkarıyoruz.</em>
+        </h2><p>
+          Kendi ürünümüzü geliştirmenin baskısını biliyoruz: gerçek kullanıcı, gerçek cihaz, gerçek hata. Müşteri
+          projelerine taşıdığımız pratik tam olarak bu.
+        </p>
+      </div>
+      <article class="product-card">
+        <div class="phone" aria-label="BirKutu uygulama önizlemesi">
+          <div class="phone-bar"><span>09:41</span><span>● ● ●</span></div><div class="phone-title">
+            <i>1K</i><div><b>BirKutu</b><small>Her kanal, bir kutu</small></div>
+          </div><div class="phone-hero">
+            <small>BİLDİRİM MERKEZİ</small><strong>Tüm mesajlar<br />tek akışta.</strong><span>3 kanal bağlı</span>
+          </div><div class="message">
+            <i class="mint"></i><div><b>Yeni proje talebi</b><span>Web sitesindeki formdan geldi</span></div><time
+              >09:38</time
+            >
+          </div><div class="message">
+            <i class="coral"></i><div><b>Ekip kanalı</b><span>Mobil build hazır, test bekliyor</span></div><time
+              >09:24</time
+            >
+          </div>
+        </div>
+        <div class="product-copy">
+          <span class="product-label">ANDROID / V1</span><h3>BirKutu</h3><p>
+            Seçtiğin uygulamaların bildirimlerde görünen mesajlarını, hesabı ve bulutu olmayan tek bir özel akışta
+            toplar.
+          </p><ul>
+            <li>Yerel ve gizlilik odaklı</li><li>Kanal seçimi, arama ve filtreler</li><li>
+              Ücretsiz, reklamsız ilk sürüm
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section process" id="surec">
+      <div class="section-kicker">/ NASIL ÇALIŞIRIZ</div><div class="section-heading">
+        <h2>Dört adım.<br />Sürpriz yok.</h2><p>
+          Her aşamada görülebilir bir çıktı vardır. Nereye geldiğimizi ve sıradaki kararı ikimiz de biliriz.
+        </p>
+      </div>
+      <div class="process-grid">
+        {
+          process.map(([no, title, text]) => (
+            <article>
+              <>
+                <span>{no}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="contact" id="iletisim">
+      <p class="eyebrow"><span></span> YENİ PROJE ALIYORUZ</p><h2>
+        Aklındaki şeyi<br /><em>birlikte çalıştıralım.</em>
+      </h2><p>
+        Fikrini, sorunu veya hedefini üç cümleyle anlat. İlk görüşmede kapsamı ve en mantıklı başlangıç noktasını
+        netleştirelim.
+      </p><a class="button button-light" href="https://github.com/cengizdastan8" target="_blank" rel="noreferrer"
+        >GitHub üzerinden ulaş <span>↗</span></a
+      >
+    </section>
+
+    <footer>
+      <a class="brand footer-brand" href="#top"
+        ><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M5 8h34v7H5zm0 11h23v7H5zm0 11h34v7H5z"></path></svg><span
+          >encarox</span
+        ></a
+      ><p>Web · Mobil · Yazılım · Büyüme</p><p>© {new Date().getFullYear()} Encarox. Türkiye’den üretildi.</p>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  :global(html) {
+    scroll-behavior: smooth;
+    background: #f2efe8;
+  }
+  :global(body) {
+    margin: 0;
+    background: #f2efe8;
+    color: #141513;
+    font-family: 'Archivo Variable', sans-serif;
+  }
+  :global(*) {
+    box-sizing: border-box;
+  }
+  main {
+    overflow: hidden;
+  }
+  .site-header {
+    height: 86px;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #b9b5aa;
+  }
+  .brand {
+    color: #141513;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+  }
+  .brand svg {
+    width: 32px;
+    height: 32px;
+    fill: #ef5b3f;
+  }
+  nav {
+    display: flex;
+    gap: 38px;
+  }
+  nav a {
+    color: #46463f;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  nav a:hover {
+    color: #ef5b3f;
+  }
+  .header-cta {
+    color: #141513;
+    border-bottom: 2px solid #141513;
+    padding: 8px 0;
+    text-decoration: none;
+    font-weight: 750;
+    font-size: 14px;
+  }
+  .hero {
+    max-width: 1440px;
+    margin: auto;
+    padding: 8vw 4vw 6vw;
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 7vw;
+    align-items: center;
+  }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+  }
+  .eyebrow span {
+    width: 36px;
+    height: 2px;
+    background: #ef5b3f;
+    display: inline-block;
+  }
+  h1,
+  h2 {
+    font-family: 'Fraunces Variable', serif;
+    font-weight: 600;
+    letter-spacing: -0.055em;
+    line-height: 0.94;
+    margin: 25px 0;
+  }
+  h1 {
+    font-size: clamp(58px, 7vw, 112px);
+  }
+  h1 em,
+  h2 em {
+    font-weight: 300;
+    color: #ef5b3f;
+  }
+  .hero-lead {
+    max-width: 640px;
+    color: #55554e;
+    font-size: clamp(17px, 1.4vw, 21px);
+    line-height: 1.55;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 34px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .button {
+    min-height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 0 24px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    transition: 0.2s ease;
+  }
+  .button-primary {
+    background: #141513;
+    color: #fff;
+  }
+  .button-primary:hover {
+    background: #ef5b3f;
+    transform: translateY(-2px);
+  }
+  .button-ghost {
+    color: #141513;
+    border-bottom: 1px solid #141513;
+    padding-inline: 5px;
+    min-height: 42px;
+  }
+  .signal-board {
+    background: #151714;
+    color: #f6f3ea;
+    border: 1px solid #151714;
+    box-shadow: 16px 16px 0 #d7d2c7;
+  }
+  .signal-top {
+    padding: 13px 16px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #3d4039;
+  }
+  .live-dot {
+    color: #b6ef46;
+  }
+  .signal-main {
+    min-height: 255px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .signal-main p,
+  .signal-main span {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+  .signal-main strong {
+    font-family: 'Fraunces Variable';
+    font-size: 122px;
+    line-height: 0.8;
+    color: #ef5b3f;
+  }
+  .signal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #3d4039;
+  }
+  .signal-grid div {
+    padding: 17px;
+    border-right: 1px solid #3d4039;
+    border-bottom: 1px solid #3d4039;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .signal-grid span {
+    color: #8b8e83;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+  .signal-grid b {
+    font-size: 12px;
+  }
+  .ticker {
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: #b6ef46;
+  }
+  .proof-strip {
+    background: #ef5b3f;
+    color: #141513;
+    display: flex;
+    gap: 5vw;
+    justify-content: center;
+    padding: 17px 4vw;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.09em;
+  }
+  .section {
+    max-width: 1440px;
+    margin: auto;
+    padding: 9vw 4vw;
+  }
+  .section-kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    font-weight: 900;
+    color: #ef5b3f;
+    margin-bottom: 40px;
+  }
+  .section-heading {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 7vw;
+    align-items: end;
+    margin-bottom: 6vw;
+  }
+  .section-heading h2,
+  .product-intro h2,
+  .contact h2 {
+    font-size: clamp(50px, 6vw, 90px);
+    margin: 0;
+  }
+  .section-heading p,
+  .product-intro p {
+    color: #585950;
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 560px;
+  }
+  .service-list {
+    border-top: 1px solid #99978e;
+  }
+  .service-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 1.25fr 40px;
+    gap: 30px;
+    align-items: center;
+    padding: 30px 4px;
+    border-bottom: 1px solid #b9b5aa;
+    transition: 0.2s;
+  }
+  .service-row:hover {
+    background: #e4dfd4;
+    padding-inline: 18px;
+  }
+  .service-row > span {
+    color: #ef5b3f;
+    font-size: 12px;
+    font-weight: 900;
+  }
+  .service-row h3 {
+    font-family: 'Fraunces Variable';
+    font-size: 32px;
+    margin: 0;
+  }
+  .service-row p {
+    color: #585950;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .service-row b {
+    font-size: 22px;
+  }
+  .product-section {
+    background: #151714;
+    color: #f5f0e5;
+    padding: 9vw max(4vw, calc((100vw - 1440px) / 2 + 4vw));
+  }
+  .product-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+    align-items: end;
+  }
+  .product-intro .section-kicker {
+    grid-column: 1/-1;
+    margin: 0;
+  }
+  .product-intro p {
+    color: #a9aa9f;
+  }
+  .light {
+    color: #b6ef46;
+  }
+  .product-card {
+    margin-top: 6vw;
+    border: 1px solid #3b3e38;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    min-height: 620px;
+  }
+  .phone {
+    width: 310px;
+    align-self: center;
+    justify-self: center;
+    background: #20231f;
+    border: 7px solid #050605;
+    padding: 14px;
+    box-shadow: 20px 22px 0 #ef5b3f;
+  }
+  .phone-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    padding: 4px;
+  }
+  .phone-title {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    padding: 18px 4px 14px;
+  }
+  .phone-title i {
+    background: #ef5b3f;
+    color: #111;
+    padding: 9px;
+    font-style: normal;
+    font-weight: 900;
+  }
+  .phone-title div {
+    display: flex;
+    flex-direction: column;
+  }
+  .phone-title small {
+    color: #999;
+    font-size: 8px;
+  }
+  .phone-hero {
+    background: linear-gradient(135deg, #ef5b3f, #b6ef46);
+    color: #151714;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .phone-hero small {
+    font-weight: 900;
+    font-size: 8px;
+  }
+  .phone-hero strong {
+    font-family: 'Fraunces Variable';
+    font-size: 27px;
+    line-height: 1;
+  }
+  .phone-hero span {
+    font-size: 9px;
+  }
+  .message {
+    margin-top: 9px;
+    border: 1px solid #3b3e38;
+    padding: 12px 8px;
+    display: grid;
+    grid-template-columns: 8px 1fr auto;
+    gap: 8px;
+    align-items: center;
+  }
+  .message i {
+    width: 7px;
+    height: 7px;
+    background: #b6ef46;
+  }
+  .message .coral {
+    background: #ef5b3f;
+  }
+  .message div {
+    display: flex;
+    flex-direction: column;
+  }
+  .message b {
+    font-size: 10px;
+  }
+  .message span,
+  .message time {
+    font-size: 8px;
+    color: #999;
+  }
+  .product-copy {
+    padding: 7vw 7vw 7vw 3vw;
+    align-self: center;
+  }
+  .product-label {
+    color: #b6ef46;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    font-weight: 900;
+  }
+  .product-copy h3 {
+    font-family: 'Fraunces Variable';
+    font-size: 66px;
+    margin: 18px 0;
+  }
+  .product-copy p {
+    font-size: 19px;
+    color: #b9baaf;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+  .product-copy ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+  }
+  .product-copy li {
+    padding: 14px 0;
+    border-bottom: 1px solid #3b3e38;
+  }
+  .product-copy li:before {
+    content: '→';
+    color: #ef5b3f;
+    margin-right: 16px;
+  }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #99978e;
+  }
+  .process-grid article {
+    padding: 28px 28px 35px 0;
+    border-right: 1px solid #b9b5aa;
+    min-height: 260px;
+  }
+  .process-grid article:not(:first-child) {
+    padding-left: 28px;
+  }
+  .process-grid span {
+    color: #ef5b3f;
+    font-weight: 900;
+    font-size: 11px;
+  }
+  .process-grid h3 {
+    font-family: 'Fraunces Variable';
+    font-size: 32px;
+    margin: 45px 0 13px;
+  }
+  .process-grid p {
+    color: #585950;
+    line-height: 1.55;
+    font-size: 14px;
+  }
+  .contact {
+    background: #ef5b3f;
+    padding: 9vw max(4vw, calc((100vw - 1440px) / 2 + 4vw));
+    color: #141513;
+  }
+  .contact .eyebrow span {
+    background: #141513;
+  }
+  .contact h2 em {
+    color: #f7f1e7;
+  }
+  .contact > p:not(.eyebrow) {
+    max-width: 700px;
+    font-size: 19px;
+    line-height: 1.55;
+  }
+  .button-light {
+    background: #f7f1e7;
+    color: #141513;
+    margin-top: 28px;
+  }
+  .button-light:hover {
+    background: #b6ef46;
+    transform: translateY(-2px);
+  }
+  footer {
+    max-width: 1440px;
+    margin: auto;
+    padding: 45px 4vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    border-top: 1px solid #b9b5aa;
+    color: #5d5d55;
+    font-size: 12px;
+  }
+  .footer-brand {
+    justify-self: start;
+  }
+  footer p:nth-child(2) {
+    text-align: center;
+  }
+  footer p:last-child {
+    text-align: right;
+  }
+  @media (max-width: 900px) {
+    nav {
+      display: none;
+    }
+    .hero {
+      grid-template-columns: 1fr;
+      padding-top: 70px;
+    }
+    .signal-board {
+      max-width: 520px;
+    }
+    .proof-strip {
+      justify-content: flex-start;
+      overflow: auto;
+    }
+    .section-heading,
+    .product-intro {
+      grid-template-columns: 1fr;
+    }
+    .service-row {
+      grid-template-columns: 40px 1fr 30px;
+    }
+    .service-row p {
+      grid-column: 2/4;
+    }
+    .product-card {
+      grid-template-columns: 1fr;
+      padding: 60px 20px;
+    }
+    .product-copy {
+      padding: 70px 10px 10px;
+    }
+    .process-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .process-grid article {
+      border-bottom: 1px solid #b9b5aa;
+    }
+    .site-header {
+      height: 76px;
+    }
+    .header-cta {
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 560px) {
+    h1 {
+      font-size: 54px;
+    }
+    .hero {
+      padding-inline: 20px;
+    }
+    .hero-actions {
+      align-items: flex-start;
+    }
+    .signal-main strong {
+      font-size: 90px;
+    }
+    .section,
+    .product-section,
+    .contact {
+      padding: 80px 20px;
+    }
+    .section-heading h2,
+    .product-intro h2,
+    .contact h2 {
+      font-size: 47px;
+    }
+    .service-row {
+      gap: 12px;
+    }
+    .service-row h3 {
+      font-size: 25px;
+    }
+    .phone {
+      width: 275px;
+    }
+    .product-card {
+      padding-inline: 10px;
+    }
+    .product-copy h3 {
+      font-size: 48px;
+    }
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+    .process-grid article {
+      border-right: 0;
+      padding-left: 0 !important;
+      min-height: auto;
+    }
+    .proof-strip span {
+      min-width: 230px;
+    }
+    .header-cta span {
+      display: none;
+    }
+    footer {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    footer p:nth-child(2),
+    footer p:last-child {
+      text-align: left;
+      margin: 0;
+    }
+  }
+</style>

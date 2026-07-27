@@ -1,0 +1,47 @@
+---
+import Layout from '~/layouts/Layout.astro';
+---
+
+<Layout metadata={{ title: 'Sayfa bulunamadı — Encarox', robots: { index: false, follow: true } }}>
+  <main>
+    <p>/ 404</p>
+    <h1>Bu sayfa<br />henüz <em>üretilmedi.</em></h1>
+    <a href={import.meta.env.BASE_URL}>Ana sayfaya dön →</a>
+  </main>
+</Layout>
+
+<style>
+  main {
+    min-height: 100vh;
+    padding: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f2efe8;
+    color: #141513;
+  }
+  p {
+    color: #ef5b3f;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+  }
+  h1 {
+    font-family: 'Fraunces Variable', serif;
+    font-size: clamp(64px, 10vw, 150px);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+    margin: 25px 0 50px;
+  }
+  em {
+    color: #ef5b3f;
+    font-weight: 300;
+  }
+  a {
+    color: #141513;
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 2px solid;
+    width: max-content;
+    padding-bottom: 6px;
+  }
+</style>
