@@ -58,7 +58,7 @@ import com.encarox.kesit.media.VideoInfo
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-@OptIn(UnstableApi::class)
+@OptIn(markerClass = [UnstableApi::class])
 @Composable
 fun EditorScreen(
     info: VideoInfo,
@@ -184,7 +184,7 @@ fun EditorScreen(
     }
 }
 
-@OptIn(UnstableApi::class)
+@OptIn(markerClass = [UnstableApi::class])
 @Composable
 private fun PlayerSurface(controller: EditorController, modifier: Modifier = Modifier) {
     Box(modifier = modifier, contentAlignment = Alignment.Center) {

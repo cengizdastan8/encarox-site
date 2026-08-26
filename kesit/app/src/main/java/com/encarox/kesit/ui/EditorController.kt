@@ -31,7 +31,7 @@ sealed interface ExportState {
  * gorunmesi. Onizleme icin dosya uretmiyoruz, oynaticiya arali kirpma
  * veriyoruz; bu yuzden "izle" tusu beklemeden calisiyor.
  */
-@OptIn(UnstableApi::class)
+@OptIn(markerClass = [UnstableApi::class])
 class EditorController(
     context: Context,
     val info: VideoInfo,

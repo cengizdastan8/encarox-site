@@ -29,7 +29,7 @@ import kotlin.coroutines.resumeWithException
  * Sonuc: baslangic tam istedigin yerde, kalite kaybi neredeyse sifir, sure ise
  * bastan sona yeniden kodlamaya kiyasla kat kat kisa.
  */
-@OptIn(UnstableApi::class)
+@OptIn(markerClass = [UnstableApi::class])
 object PreciseTrimmer {
 
     data class Outcome(
