@@ -1,9 +1,7 @@
 package com.encarox.kesit.ui
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
@@ -28,14 +26,9 @@ private val Dark = darkColorScheme(
     outline = Color(0xFF2A2F38),
 )
 
-private val Light = lightColorScheme(
-    primary = Accent,
-    onPrimary = Color.White,
-    secondary = AccentSoft,
-)
-
 @Composable
 fun KesitTheme(content: @Composable () -> Unit) {
-    // Video duzenlemede koyu arayuz standart: goruntunun rengini bozmaz.
-    MaterialTheme(colorScheme = if (isSystemInDarkTheme()) Dark else Dark, content = content)
+    // Video duzenlemede arayuz her zaman koyu: acik zemin goruntunun
+    // algilanan parlakligini ve rengini bozar.
+    MaterialTheme(colorScheme = Dark, content = content)
 }
