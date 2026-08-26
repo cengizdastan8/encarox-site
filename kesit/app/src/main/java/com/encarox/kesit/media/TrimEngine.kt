@@ -68,7 +68,7 @@ object TrimEngine {
                             outPath = temp.absolutePath,
                             onProgress = onProgress,
                         )
-                        note = describeOptimization(outcome.optimizationResult)
+                        note = outcome.note
                     } catch (t: Throwable) {
                         if (t is kotlinx.coroutines.CancellationException) throw t
                         // Bazi kodek/kap birlesimlerinde Transformer calismaz.
@@ -128,14 +128,6 @@ object TrimEngine {
             onProgress = onProgress,
         )
         outcome.actualStartUs / 1000L
-    }
-
-    private fun describeOptimization(result: String?): String? = when {
-        result == null -> null
-        result.contains("SUCCEEDED", ignoreCase = true) ->
-            "Hizli kesme uygulandi: yalnizca ilk saniye yeniden kodlandi."
-        result.contains("NONE", ignoreCase = true) -> null
-        else -> "Bu videoda hizlandirma uygulanamadi, tam kodlama yapildi."
     }
 
     private fun buildName(sourceName: String, startMs: Long, endMs: Long): String {

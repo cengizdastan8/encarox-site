@@ -33,7 +33,8 @@ import kotlin.coroutines.resumeWithException
 object PreciseTrimmer {
 
     data class Outcome(
-        val optimizationResult: String?,
+        /** Kullaniciya gosterilecek kisa aciklama; soylenecek bir sey yoksa null. */
+        val note: String?,
         val durationMs: Long,
         val fileSizeBytes: Long,
     )
@@ -108,12 +109,23 @@ object PreciseTrimmer {
 
             onProgress(1f)
             Outcome(
-                optimizationResult = runCatching { result.optimizationResult }.getOrNull(),
+                note = describeOptimization(runCatching { result.optimizationResult }.getOrNull()),
                 durationMs = result.durationMs.coerceAtLeast(0L),
                 fileSizeBytes = result.fileSizeBytes.coerceAtLeast(0L),
             )
         } finally {
             runCatching { transformer?.cancel() }
         }
+    }
+
+    /**
+     * Yalnizca olumlu durumu bildiriyoruz. Optimizasyonun uygulanmadigi
+     * durumlarin bir kismi (kesme noktasi zaten anahtar kareye denk gelmisse)
+     * aslinda tam kopyalamadir; "tam kodlama yapildi" demek yanlis olurdu.
+     */
+    private fun describeOptimization(result: Int?): String? = when (result) {
+        ExportResult.OPTIMIZATION_SUCCEEDED ->
+            "Hizli kesme uygulandi: yalnizca bastaki kare grubu yeniden kodlandi."
+        else -> null
     }
 }
