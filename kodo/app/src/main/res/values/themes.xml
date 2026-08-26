@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Kodo" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/kodo_ink</item>
+    </style>
+
+    <style name="Theme.Kodo.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/kodo_ink</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.Kodo</item>
+    </style>
+</resources>

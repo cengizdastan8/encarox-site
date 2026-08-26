@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kodo</string>
+    <string name="tagline">Every verification code, one inbox.</string>
+
+    <!-- Inbox -->
+    <string name="inbox_title">Codes</string>
+    <string name="empty_title">No codes yet</string>
+    <string name="empty_subtitle">Connect a Gmail account or arm SMS capture. New verification codes will land here automatically.</string>
+    <string name="copied">Code copied</string>
+
+    <!-- Notification -->
+    <string name="channel_codes">Captured codes</string>
+    <string name="channel_codes_desc">Shows a code the moment Kodo captures one.</string>
+    <string name="notif_from">from %1$s</string>
+    <string name="action_copy">Copy</string>
+
+    <!-- Accounts -->
+    <string name="accounts_title">Gmail accounts</string>
+    <string name="add_account">Add account</string>
+    <string name="accounts_empty">No accounts connected yet.\nTap “Add account” to connect a Gmail inbox.</string>
+    <string name="scanning">Scanning for codes</string>
+    <string name="paused">Paused</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="section_sources">Sources</string>
+    <string name="section_behavior">Behavior</string>
+    <string name="gmail_accounts">Gmail accounts</string>
+    <string name="gmail_accounts_desc">Connect and manage inboxes to scan.</string>
+    <string name="sms_capture">SMS capture</string>
+    <string name="sms_capture_desc">Uses Android’s SMS User Consent — no SMS permission needed. Tap below, then approve the next code SMS.</string>
+    <string name="listen_sms">Listen for the next SMS code</string>
+    <string name="notifications">Notifications</string>
+    <string name="sync_interval">Gmail check interval</string>
+    <string name="retention">Keep codes for</string>
+    <string name="minutes_short">min</string>
+    <string name="days_short">days</string>
+    <string name="privacy_footer">Kodo keeps every code on this device only. Nothing is uploaded to any server.</string>
+
+    <!-- Onboarding -->
+    <string name="get_started">Get started</string>
+    <string name="feature_gmail">Reads codes from all your Gmail accounts</string>
+    <string name="feature_sms">Catches SMS codes with one tap</string>
+    <string name="feature_private">Everything stays on your phone</string>
+</resources>

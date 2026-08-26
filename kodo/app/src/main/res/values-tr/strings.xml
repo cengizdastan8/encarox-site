@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kodo</string>
+    <string name="tagline">Tüm doğrulama kodların, tek kutuda.</string>
+
+    <string name="inbox_title">Kodlar</string>
+    <string name="empty_title">Henüz kod yok</string>
+    <string name="empty_subtitle">Bir Gmail hesabı bağla ya da SMS yakalamayı başlat. Yeni doğrulama kodları buraya otomatik düşecek.</string>
+    <string name="copied">Kod kopyalandı</string>
+
+    <string name="channel_codes">Yakalanan kodlar</string>
+    <string name="channel_codes_desc">Kodo bir kod yakaladığı anda gösterir.</string>
+    <string name="notif_from">%1$s kaynağından</string>
+    <string name="action_copy">Kopyala</string>
+
+    <string name="accounts_title">Gmail hesapları</string>
+    <string name="add_account">Hesap ekle</string>
+    <string name="accounts_empty">Henüz hesap bağlı değil.\n“Hesap ekle”ye dokunup bir Gmail kutusu bağla.</string>
+    <string name="scanning">Kodlar taranıyor</string>
+    <string name="paused">Duraklatıldı</string>
+
+    <string name="settings_title">Ayarlar</string>
+    <string name="section_sources">Kaynaklar</string>
+    <string name="section_behavior">Davranış</string>
+    <string name="gmail_accounts">Gmail hesapları</string>
+    <string name="gmail_accounts_desc">Taranacak kutuları bağla ve yönet.</string>
+    <string name="sms_capture">SMS yakalama</string>
+    <string name="sms_capture_desc">Android SMS Kullanıcı Onayı kullanır — SMS izni gerekmez. Aşağıya dokun, gelen kod SMS’ini onayla.</string>
+    <string name="listen_sms">Sıradaki SMS kodunu dinle</string>
+    <string name="notifications">Bildirimler</string>
+    <string name="sync_interval">Gmail kontrol aralığı</string>
+    <string name="retention">Kodları sakla</string>
+    <string name="minutes_short">dk</string>
+    <string name="days_short">gün</string>
+    <string name="privacy_footer">Kodo tüm kodları yalnızca bu cihazda tutar. Hiçbir sunucuya yüklenmez.</string>
+
+    <string name="get_started">Başla</string>
+    <string name="feature_gmail">Tüm Gmail hesaplarından kodları okur</string>
+    <string name="feature_sms">SMS kodlarını tek dokunuşla yakalar</string>
+    <string name="feature_private">Her şey telefonunda kalır</string>
+</resources>

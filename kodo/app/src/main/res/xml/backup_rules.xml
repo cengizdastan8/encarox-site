@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Codes are sensitive; exclude local data from cloud backup. -->
+    <exclude domain="database" path="kodo.db" />
+    <exclude domain="sharedpref" path="kodo_settings" />
+</full-backup-content>

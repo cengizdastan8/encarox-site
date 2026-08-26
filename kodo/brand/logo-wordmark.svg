@@ -1,0 +1,18 @@
+<svg width="880" height="260" viewBox="0 0 880 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brand2" x1="40" y1="60" x2="200" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6C4CF1"/>
+      <stop offset="1" stop-color="#22D3A6"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(30,30)">
+    <rect width="200" height="200" rx="46" fill="#141527"/>
+    <path d="M52 96 L52 137 Q52 155 70 155 L130 155 Q148 155 148 137 L148 96"
+          fill="none" stroke="url(#brand2)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M100 52 L100 108" fill="none" stroke="#6C4CF1" stroke-width="18" stroke-linecap="round"/>
+    <path d="M78 90 L100 112 L122 90" fill="none" stroke="#22D3A6" stroke-width="18"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="270" y="165" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-size="128" font-weight="700" fill="#0E0F1A">Kodo</text>
+</svg>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Tray (open-topped container) -->
+    <path
+        android:pathData="M28,52 L28,74 Q28,84 38,84 L70,84 Q80,84 80,74 L80,52"
+        android:strokeWidth="10"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:startX="28" android:startY="52"
+                android:endX="80" android:endY="84"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FF6C4CF1" />
+                <item android:offset="1.0" android:color="#FF22D3A6" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Stem of the code dropping in -->
+    <path
+        android:pathData="M54,28 L54,58"
+        android:strokeColor="#FF6C4CF1"
+        android:strokeWidth="10"
+        android:strokeLineCap="round" />
+
+    <!-- Downward chevron -->
+    <path
+        android:pathData="M42,48 L54,60 L66,48"
+        android:strokeColor="#FF22D3A6"
+        android:strokeWidth="10"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>
