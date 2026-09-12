@@ -35,9 +35,10 @@ object CodeExtractor {
         "reference no", "referans"
     )
 
-    // 4-8 digit codes, or grouped like 123-456 / 123 456.
+    // 4-8 digit codes, or grouped like 123-456 / 123 456. Only adjacent digits
+    // disqualify a run — a trailing period/comma (sentence punctuation) is fine.
     private val CANDIDATE_REGEX =
-        Regex("""(?<![\d.,])(\d{3}[ -]\d{3}|\d{4,8})(?![\d.,])""")
+        Regex("""(?<!\d)(\d{3}[ -]\d{3}|\d{4,8})(?!\d)""")
 
     // A well-known service -> normalized brand name.
     private val KNOWN_SERVICES = mapOf(
