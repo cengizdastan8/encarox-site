@@ -14,3 +14,6 @@ local.properties
 # Secrets — never commit real OAuth clients
 /app/google-services.json
 /app/src/main/res/values/secrets.xml
+
+# Debug keystore is intentionally committed (stable SHA-1). Release keys stay ignored.
+!keystore/debug.keystore
