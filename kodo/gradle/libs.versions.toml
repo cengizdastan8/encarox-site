@@ -13,10 +13,9 @@ datastore = "1.1.1"
 hilt = "2.52"
 hiltNavigation = "1.2.0"
 playServicesAuth = "21.2.0"
-googleApiClient = "2.7.0"
-googleApiServicesGmail = "v1-rev20240520-2.0.0"
-googleHttpClientGson = "1.44.2"
-googleOauthClient = "1.36.0"
+playServicesAuthApiPhone = "18.0.2"
+googleApiClient = "2.7.1"
+googleApiServicesGmail = "v1-rev20260727-2.0.0"
 coil = "2.7.0"
 coroutinesPlayServices = "1.8.1"
 splashscreen = "1.0.1"
@@ -54,12 +53,12 @@ hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", v
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigation" }
 
 play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
-play-services-auth-api-phone = { group = "com.google.android.gms", name = "play-services-auth-api-phone", version.ref = "playServicesAuth" }
+play-services-auth-api-phone = { group = "com.google.android.gms", name = "play-services-auth-api-phone", version.ref = "playServicesAuthApiPhone" }
 
+# google-api-client-android transitively brings google-http-client(-gson) and
+# google-oauth-client at compatible versions, so those are not pinned separately.
 google-api-client-android = { group = "com.google.api-client", name = "google-api-client-android", version.ref = "googleApiClient" }
 google-api-services-gmail = { group = "com.google.apis", name = "google-api-services-gmail", version.ref = "googleApiServicesGmail" }
-google-http-client-gson = { group = "com.google.http-client", name = "google-http-client-gson", version.ref = "googleHttpClientGson" }
-google-oauth-client = { group = "com.google.oauth-client", name = "google-oauth-client", version.ref = "googleOauthClient" }
 
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "coroutinesPlayServices" }

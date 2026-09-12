@@ -116,8 +116,6 @@ dependencies {
     // Gmail API
     implementation(libs.google.api.client.android)
     implementation(libs.google.api.services.gmail)
-    implementation(libs.google.http.client.gson)
-    implementation(libs.google.oauth.client)
 
     implementation(libs.coil.compose)
     implementation(libs.kotlinx.coroutines.android)
