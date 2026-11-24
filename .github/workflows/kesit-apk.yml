@@ -26,10 +26,14 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          log-accepted-android-sdk-licenses: false
+      # Runner imajinda Android SDK ve kabul edilmis lisanslar hazir geliyor;
+      # ANDROID_HOME imaj seviyesinde tanimli. Ayrica bir kurulum eylemi
+      # kullanmiyoruz: sdkmanager'i her imaj degisiminde kirilabiliyor.
+      - name: Android SDK'yi dogrula
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          ls "$ANDROID_HOME/platforms" || true
+          ls "$ANDROID_HOME/build-tools" || true
 
       - name: Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -56,6 +60,10 @@ jobs:
       - name: Hata ozeti
         if: failure()
         run: |
+          if [ ! -f build.log ]; then
+            echo "Derleme hic baslamadi; hata yukaridaki adimda."
+            exit 0
+          fi
           echo "=================== DERLEYICI HATALARI ==================="
           grep -nE "^(e: |error: )" build.log | head -80 || echo "(derleyici hatasi satiri yok)"
           echo "=================== NE TERS GITTI ======================="
