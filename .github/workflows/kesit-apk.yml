@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -69,3 +69,30 @@ jobs:
           path: |
             kesit/app/build/outputs/apk/debug/*.apk
             kesit/app/build/outputs/apk/release/*.apk
+
+      # Actions arsivi zip halinde ve indirmek icin oturum gerektiriyor.
+      # Surum varligi ise sabit, dogrudan bir .apk adresi veriyor: telefonun
+      # tarayicisindan tiklayip kurabilmek icin bu gerekli.
+      - name: Son APK surumunu guncelle
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p dist
+          cp kesit/app/build/outputs/apk/release/app-release.apk dist/kesit.apk
+          cp kesit/app/build/outputs/apk/debug/app-debug.apk dist/kesit-debug.apk
+          printf '%s\n' \
+            "Kesit video kesme uygulamasinin en son derlemesi." \
+            "" \
+            "Telefona kurmak icin kesit.apk dosyasini indir ve kur." \
+            "Release surumu takilirsa kesit-debug.apk her zaman calisir." \
+            "" \
+            "Derleme: $GITHUB_SHA" > notes.md
+          if gh release view kesit-latest >/dev/null 2>&1; then
+            gh release upload kesit-latest dist/kesit.apk dist/kesit-debug.apk --clobber
+            gh release edit kesit-latest --notes-file notes.md
+          else
+            gh release create kesit-latest dist/kesit.apk dist/kesit-debug.apk \
+              --target "$GITHUB_SHA" \
+              --title "Kesit - son APK" \
+              --notes-file notes.md
+          fi
